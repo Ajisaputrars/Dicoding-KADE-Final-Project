@@ -34,4 +34,15 @@ object TheSportDbApi {
                 .toString()
         return a
     }
+
+    fun getSearchTeams(name: String?): String {
+        val a =  Uri.parse(BuildConfig.BASE_URL).buildUpon()
+                .appendPath("1")
+                .appendPath("searchteams.php")
+                .appendQueryParameter("t", name)
+                .build()
+                .toString()
+        Log.d("getSearchTeams", "link adalah " + a)
+        return a
+    }
 }
