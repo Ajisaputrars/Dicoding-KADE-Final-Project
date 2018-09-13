@@ -35,14 +35,16 @@ class MatchSearchPresenter(private val view: MatchSearchView,
 //                }
 //            }
 
-            async(context.main){
-                val data = bg {
-                    gson.fromJson(apiRepository
-                            .doRequest(TheSportDbApi.getSearchMatches(name)),
-                            EventSearchResponse::class.java
-                    )
+            if (name.length > 2) {
+                async(context.main){
+                    val data = bg {
+                        gson.fromJson(apiRepository
+                                .doRequest(TheSportDbApi.getSearchMatches(name)),
+                                EventSearchResponse::class.java
+                        )
+                    }
+                    view.showMatchSearchList(data.await().event)
                 }
-                view.showMatchSearchList(data.await().event)
             }
         }
     }
