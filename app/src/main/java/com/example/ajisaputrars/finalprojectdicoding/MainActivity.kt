@@ -17,6 +17,7 @@ import android.view.ViewGroup
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
 
         if (id == R.id.action_team_search) {
             toast("Team Tapped")
+            startActivity<TeamSearchActivity>()
             return true
         }
 

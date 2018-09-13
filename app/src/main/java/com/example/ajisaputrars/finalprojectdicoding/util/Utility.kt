@@ -13,6 +13,10 @@ fun View.invisible() {
     visibility = View.INVISIBLE
 }
 
+fun View.gone() {
+    visibility = View.GONE
+}
+
 @SuppressLint("SimpleDateFormat")
 fun toSimpleString(date: Date?): String? = with(date ?: Date()) {
     SimpleDateFormat("EEE, dd MMM yyy").format(this)

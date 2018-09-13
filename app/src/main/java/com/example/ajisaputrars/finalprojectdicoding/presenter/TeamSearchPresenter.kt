@@ -13,15 +13,17 @@ class TeamSearchPresenter(private val view: TeamSearchView,
                           private val apiRepository: ApiRepository,
                           private val gson: Gson) {
 
-    fun getTeamsSearch(name: String?) {
-        doAsync {
-            val data = gson.fromJson(apiRepository
-                    .doRequest(TheSportDbApi.getSearchTeams(name)),
-                    TeamResponse::class.java
-            )
+    fun getTeamsSearch(name: String) {
+        if (name.length > 2) {
+            doAsync {
+                val data = gson.fromJson(apiRepository
+                        .doRequest(TheSportDbApi.getSearchTeams(name)),
+                        TeamResponse::class.java
+                )
 
-            uiThread {
-                view.showTeamSearchList(data.teams)
+                uiThread {
+                    view.showTeamSearchList(data.teams)
+                }
             }
         }
     }

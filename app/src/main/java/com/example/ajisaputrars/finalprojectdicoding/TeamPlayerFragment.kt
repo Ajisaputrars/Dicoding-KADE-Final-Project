@@ -76,22 +76,15 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, TeamPlayerView {
         return createView(AnkoContext.create(ctx))
     }
 
-    override fun showPlayerList(data: List<Player>) {
-        players.clear()
-        players.addAll(data)
-        adapter.notifyDataSetChanged()
-
-        val player1 = players[0]
-        val player2 = players[1]
-        Log.d("Player1", "Namanya = " + player1.player + " dan posisi = "
-                + player1.position + " dengan gambar = " + player1.cutout)
-        Log.d("Player2", "Namanya = " + player2.player + " dan posisi = "
-                + player2.position + " dengan gambar = " + player2.cutout)
+    override fun showPlayerList(data: List<Player>?) {
+        if (data == null) {
+            Log.d("Player Null", "Null nih playernya")
+        } else {
+            players.clear()
+            players.addAll(data)
+            adapter.notifyDataSetChanged()
+        }
     }
-
-//    fun showLoading()
-//    fun hideLoading()
-//    fun showPlayerList(data: List<Player>)
 
     override fun createView(ui: AnkoContext<Context>): View = with(ui) {
         linearLayout {

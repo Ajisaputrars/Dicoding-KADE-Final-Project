@@ -60,7 +60,11 @@ class TeamDetailActivity : AppCompatActivity(){
         override fun getItem(position: Int): Fragment? {
             when (position) {
                 0 -> {
-                    return TeamOverviewFragment.newInstance(teamDetailObject.descriptionEN!!)
+                    var descriptionEN = teamDetailObject.descriptionEN
+                    if (descriptionEN == null) {
+                        descriptionEN = ""
+                    }
+                    return TeamOverviewFragment.newInstance(descriptionEN)
                 }
 
                 1 -> {

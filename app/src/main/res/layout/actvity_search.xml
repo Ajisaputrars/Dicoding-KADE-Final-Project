@@ -19,9 +19,7 @@
         android:id="@+id/recyclerview_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:clipToPadding="false"
-        android:scrollbarStyle="outsideOverlay"/>
+        android:padding="16dp"/>
 
     <TextView
         android:id="@+id/textview_empty_list"
