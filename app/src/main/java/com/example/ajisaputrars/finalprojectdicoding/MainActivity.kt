@@ -17,6 +17,7 @@ import android.view.ViewGroup
 
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.view.*
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,7 +60,13 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
 
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_team_search) {
+            toast("Team Tapped")
+            return true
+        }
+
+        if (id == R.id.action_match_search) {
+            toast("Match Tapped")
             return true
         }
 
