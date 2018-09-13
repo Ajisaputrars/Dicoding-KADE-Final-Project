@@ -3,11 +3,13 @@ package com.example.ajisaputrars.finalprojectdicoding
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.example.ajisaputrars.finalprojectdicoding.interfaces.Player
+import com.example.ajisaputrars.finalprojectdicoding.util.nullToEmpty
 import com.squareup.picasso.Picasso
 import org.jetbrains.anko.*
 
@@ -32,11 +34,35 @@ class PlayerDetailActivity : AppCompatActivity(), AnkoComponent<Context> {
     }
 
     fun setUI(){
-        Picasso.get().load(player.fanart).into(playerImageView)
-        playerDescriptionTextView.text = player.descriptionEN
-        playerWeightTextView.text = player.weight
-        playerHeightTextView.text = player.height
-        playerPositionTextView.text = player.position
+        if (player.fanart == "" || player.fanart == null ){
+
+        } else {
+            Picasso.get().load(player.fanart.nullToEmpty()).into(playerImageView)
+        }
+
+        if (player.descriptionEN == "" || player.descriptionEN == null ){
+
+        } else {
+            playerDescriptionTextView.text = player.descriptionEN.nullToEmpty()
+        }
+
+        if (player.weight == "" || player.weight == null ){
+
+        } else {
+            playerWeightTextView.text = player.weight.nullToEmpty()
+        }
+
+        if (player.height == "" || player.height == null ){
+
+        } else {
+            playerHeightTextView.text = player.height.nullToEmpty()
+        }
+
+        if (player.position == "" || player.position == null ){
+
+        } else {
+            playerPositionTextView.text = player.position.nullToEmpty()
+        }
     }
 
     override fun createView(ui: AnkoContext<Context>): View = with(ui) {

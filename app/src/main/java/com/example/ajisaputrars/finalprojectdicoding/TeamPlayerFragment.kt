@@ -19,6 +19,7 @@ import com.example.ajisaputrars.finalprojectdicoding.interfaces.Player
 import com.example.ajisaputrars.finalprojectdicoding.interfaces.TeamPlayerView
 import com.example.ajisaputrars.finalprojectdicoding.presenter.TeamPlayerPresenter
 import com.example.ajisaputrars.finalprojectdicoding.presenter.TeamPresenter
+import com.example.ajisaputrars.finalprojectdicoding.util.nullToEmpty
 import com.example.ajisaputrars.submission4.api.ApiRepository
 import com.google.gson.Gson
 import org.jetbrains.anko.*
@@ -58,7 +59,6 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, TeamPlayerView {
         Log.d("ID TEAM", "IDnya adalah = " + idTeam)
 
         adapter = PlayerAdapter(players){
-            toast("Tap player dengan nama " + it.player)
             startActivity<PlayerDetailActivity>(
                     "playerObject" to it
             )
