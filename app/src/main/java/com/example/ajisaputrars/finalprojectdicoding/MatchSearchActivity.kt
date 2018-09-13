@@ -10,46 +10,42 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.example.ajisaputrars.finalprojectdicoding.R.string.teams
+import com.example.ajisaputrars.finalprojectdicoding.adapter.MatchAdapter
 import com.example.ajisaputrars.finalprojectdicoding.adapter.TeamAdapter
+import com.example.ajisaputrars.finalprojectdicoding.interfaces.MatchSearchView
 import com.example.ajisaputrars.finalprojectdicoding.interfaces.TeamSearchView
+import com.example.ajisaputrars.finalprojectdicoding.presenter.MatchPresenter
+import com.example.ajisaputrars.finalprojectdicoding.presenter.MatchSearchPresenter
 import com.example.ajisaputrars.finalprojectdicoding.presenter.TeamSearchPresenter
-import com.example.ajisaputrars.finalprojectdicoding.util.gone
-import com.example.ajisaputrars.finalprojectdicoding.util.visible
 import com.example.ajisaputrars.submission4.api.ApiRepository
+import com.example.ajisaputrars.submission4.model.Event
 import com.example.ajisaputrars.submission4.model.Team
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.actvity_search.*
 import org.jetbrains.anko.*
 import org.jetbrains.anko.recyclerview.v7.recyclerView
-import org.jetbrains.anko.support.v4.ctx
-import org.jetbrains.anko.support.v4.startActivity
 
-class TeamSearchActivity : AppCompatActivity(), TeamSearchView, AnkoComponent<Context> {
+class MatchSearchActivity : AppCompatActivity(), AnkoComponent<Context>, MatchSearchView {
 
     private lateinit var searchView: SearchView
-    private val teamsSearch: MutableList<Team> = mutableListOf()
-    private lateinit var presenter: TeamSearchPresenter
-    private lateinit var listTeamSearch: RecyclerView
-
-
-    private lateinit var adapter: TeamAdapter
+    private val matchesSearch: MutableList<Event> = mutableListOf()
+    private lateinit var presenter: MatchSearchPresenter
+    private lateinit var listMatchSearch: RecyclerView
+    private lateinit var adapter: MatchAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(createView(AnkoContext.create(ctx)))
 
-        adapter = TeamAdapter(teamsSearch) {
-            Log.d("ID Team", "ID untuk " + it.team + " adalah = " + it.idTeam)
-            startActivity<TeamDetailActivity>(
-                    "teamObject" to it
+        adapter = MatchAdapter(matchesSearch) {
+            startActivity<MatchDetailActivity>(
+                    "matchObject" to it
             )
         }
-        listTeamSearch.adapter = adapter
+        listMatchSearch.adapter = adapter
 
         val request = ApiRepository()
         val gson = Gson()
-        presenter = TeamSearchPresenter(this, request, gson)
+        presenter = MatchSearchPresenter(this, request, gson)
     }
 
     private fun setupToolbar() {
@@ -92,11 +88,11 @@ class TeamSearchActivity : AppCompatActivity(), TeamSearchView, AnkoComponent<Co
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 if (newText == null || newText == "") {
-                    teamsSearch.clear()
+                    matchesSearch.clear()
                     adapter.notifyDataSetChanged()
                     Log.d("NewTextNull", "NewText adalah = " + newText)
                 } else {
-                    presenter.getTeamsSearch(newText)
+                    presenter.getMatchSearch(newText)
                     Log.d("NewText", "NewText adalah = " + newText)
                 }
                 return true
@@ -104,19 +100,20 @@ class TeamSearchActivity : AppCompatActivity(), TeamSearchView, AnkoComponent<Co
         })
     }
 
-    override fun showTeamSearchList(data: List<Team>?) {
+    override fun showMatchSearchList(data: List<Event>?) {
         if (data== null) {
             Log.d("Data Null", "Data null nich")
         } else {
-            teamsSearch.clear()
-            teamsSearch.addAll(data)
+            matchesSearch.clear()
+            matchesSearch.addAll(data)
             adapter.notifyDataSetChanged()
+            Log.d("Data Gak Null", "Data pertama adalah " + matchesSearch[0].homeTeam + " VS " + matchesSearch[0].awayTeam)
         }
     }
 
     override fun createView(ui: AnkoContext<Context>): View = with(ui) {
         linearLayout {
-            listTeamSearch = recyclerView {
+            listMatchSearch = recyclerView {
                 id = R.id.listEvent
                 lparams(width = matchParent, height = wrapContent)
                 layoutManager = LinearLayoutManager(ctx)

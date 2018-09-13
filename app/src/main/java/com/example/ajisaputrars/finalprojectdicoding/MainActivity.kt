@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         if (id == R.id.action_match_search) {
             toast("Match Tapped")
+            startActivity<MatchSearchActivity>()
             return true
         }
 

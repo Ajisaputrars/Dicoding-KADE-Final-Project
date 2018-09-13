@@ -29,7 +29,8 @@
             android:name=".TeamDetailActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".PlayerDetailActivity" />
-        <activity android:name=".TeamSearchActivity"></activity>
+        <activity android:name=".TeamSearchActivity" />
+        <activity android:name=".MatchSearchActivity"></activity>
     </application>
 
 </manifest>
