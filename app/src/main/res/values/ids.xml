@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="team_badge" type="id" />
+    <item name="team_name" type="id" />
+    <item name="spinner" type="id" />
+    <item name="listEvent" type="id" />
+
+    <item name="text_vs" type="id" />
+    <item name="team_home" type="id" />
+    <item name="score_home" type="id" />
+    <item name="team_away" type="id" />
+    <item name="score_away" type="id" />
+    <item name="date_match" type="id" />
+    <item name="list_team" type="id" />
+    <item name="list_fav" type="id" />
+    <item name="player_badge" type="id" />
+    <item name="player_name" type="id" />
+    <item name="player_position" type="id" />
+    <item name="listPlayer" type="id" />
+    <item name="first_item_player_detail" type="id" />
+    <item name="second_item_player_detail" type="id" />
+    <item name="third_item_player_detail" type="id" />
+</resources>
