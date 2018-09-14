@@ -23,3 +23,11 @@ fun String?.nullToEmpty(): String = this ?: ""
 fun toSimpleString(date: Date?): String? = with(date ?: Date()) {
     SimpleDateFormat("EEE, dd MMM yyy").format(this)
 }
+
+fun String.dateTimeToFormat(format: String = "yyyy-MM-dd HH:mm:ss"): Long {
+
+    val formatter = SimpleDateFormat(format, Locale.ENGLISH)
+    val date = formatter.parse(this)
+
+    return date.time
+}

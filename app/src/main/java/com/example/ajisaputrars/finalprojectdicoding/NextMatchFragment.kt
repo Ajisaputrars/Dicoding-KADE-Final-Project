@@ -39,6 +39,8 @@ class NextMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
     private var leagueNextStr = "eventsnextleague.php?id=4328"
     private var isPreviousLeagueMatchSelected = true
 
+    private var isNextMatch = true
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -47,8 +49,10 @@ class NextMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
         adapter = MatchAdapter(eventMatchLeague) {
             toast("Tap berhasil")
             startActivity<MatchDetailActivity>(
-                    "matchObject" to it
-            )        }
+                    "matchObject" to it,
+                    "isNextMatch" to isNextMatch
+            )
+        }
 
         recyclerView.adapter = adapter
 

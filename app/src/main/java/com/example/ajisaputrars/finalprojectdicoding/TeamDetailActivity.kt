@@ -82,7 +82,7 @@ class TeamDetailActivity : AppCompatActivity(){
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_detail, menu)
+        menuInflater.inflate(R.menu.menu_team_detail, menu)
         this.menu = menu
 
         favoriteState()

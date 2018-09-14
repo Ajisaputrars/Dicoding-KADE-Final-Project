@@ -6,9 +6,4 @@
         android:icon="@drawable/ic_star_border_white_24dp"
         android:title="@string/add_favorite"
         app:showAsAction="always" />
-
-    <item
-        android:id="@+id/menu_item_add_calendar_menu_detail_match"
-        android:title="Add to Calendar"
-        app:showAsAction="never" />
 </menu>
