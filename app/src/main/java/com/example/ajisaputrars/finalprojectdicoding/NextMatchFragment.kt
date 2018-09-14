@@ -49,9 +49,7 @@ class NextMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
         adapter = MatchAdapter(eventMatchLeague) {
             toast("Tap berhasil")
             startActivity<MatchDetailActivity>(
-                    "matchObject" to it,
-                    "isNextMatch" to isNextMatch
-            )
+                    "matchObject" to it)
         }
 
         recyclerView.adapter = adapter
