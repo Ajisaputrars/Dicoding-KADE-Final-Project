@@ -22,19 +22,6 @@ class MatchSearchPresenter(private val view: MatchSearchView,
 
     fun getMatchSearch(name: String?) {
         if (name != null) {
-//            if (name.length > 2) {
-//                doAsync {
-//                    val data = gson.fromJson(apiRepository
-//                            .doRequest(TheSportDbApi.getSearchMatches(name)),
-//                            EventResponse::class.java
-//                    )
-//
-//                    uiThread {
-//                        view.showMatchSearchList(data.events)
-//                    }
-//                }
-//            }
-
             if (name.length > 2) {
                 async(context.main){
                     val data = bg {
