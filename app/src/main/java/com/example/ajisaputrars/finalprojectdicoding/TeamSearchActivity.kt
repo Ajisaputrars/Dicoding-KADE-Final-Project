@@ -40,7 +40,6 @@ class TeamSearchActivity : AppCompatActivity(), TeamSearchView, AnkoComponent<Co
         setContentView(createView(AnkoContext.create(ctx)))
 
         adapter = TeamAdapter(teamsSearch) {
-            Log.d("ID Team", "ID untuk " + it.team + " adalah = " + it.idTeam)
             startActivity<TeamDetailActivity>(
                     "teamObject" to it
             )
@@ -94,10 +93,8 @@ class TeamSearchActivity : AppCompatActivity(), TeamSearchView, AnkoComponent<Co
                 if (newText == null || newText == "") {
                     teamsSearch.clear()
                     adapter.notifyDataSetChanged()
-                    Log.d("NewTextNull", "NewText adalah = " + newText)
                 } else {
                     presenter.getTeamsSearch(newText)
-                    Log.d("NewText", "NewText adalah = " + newText)
                 }
                 return true
             }
@@ -105,11 +102,16 @@ class TeamSearchActivity : AppCompatActivity(), TeamSearchView, AnkoComponent<Co
     }
 
     override fun showTeamSearchList(data: List<Team>?) {
-        if (data== null) {
-            Log.d("Data Null", "Data null nich")
+        if (data == null) {
+
         } else {
             teamsSearch.clear()
-            teamsSearch.addAll(data)
+            for (i in data) {
+                if (i.sport == "Soccer") {
+//                    teamsSearch.addAll(data)
+                    teamsSearch.add(i)
+                }
+            }
             adapter.notifyDataSetChanged()
         }
     }

@@ -43,7 +43,6 @@ class FavTeamFragment : Fragment(), AnkoComponent<Context> {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         adapter = TeamAdapter(favorites) {
-            toast("Tap berhasil")
             startActivity<TeamDetailActivity>(
                     "teamObject" to it
             )

@@ -63,7 +63,7 @@ class MatchAdapter(private val teams: List<Event>, val listener: (Event) -> Unit
                         id = date_match
                         textSize = 14f
                         gravity = Gravity.CENTER
-                        text = "20/08/1995"
+//                        text = "20/08/1995"
                     }.lparams {
                         width = wrapContent
                         height = wrapContent
@@ -86,7 +86,7 @@ class MatchAdapter(private val teams: List<Event>, val listener: (Event) -> Unit
 
                     textView {
                         id = score_home
-                        text = "1"
+//                        text = "1"
                         textSize = 14f
                     }.lparams {
                         width = wrapContent
@@ -99,7 +99,7 @@ class MatchAdapter(private val teams: List<Event>, val listener: (Event) -> Unit
                     textView {
                         id = score_away
                         textSize = 14f
-                        text = "0"
+//                        text = "0"
                     }.lparams {
                         width = wrapContent
                         height = wrapContent
@@ -112,7 +112,7 @@ class MatchAdapter(private val teams: List<Event>, val listener: (Event) -> Unit
                     textView {
                         id = team_home
                         textSize = 14f
-                        text = "Man City"
+//                        text = "Man City"
                     }.lparams {
                         width = wrapContent
                         height = wrapContent
@@ -123,7 +123,7 @@ class MatchAdapter(private val teams: List<Event>, val listener: (Event) -> Unit
                     textView {
                         id = team_away
                         textSize = 14f
-                        text = "Man United"
+//                        text = "Man United"
                     }.lparams {
                         width = wrapContent
                         height = wrapContent

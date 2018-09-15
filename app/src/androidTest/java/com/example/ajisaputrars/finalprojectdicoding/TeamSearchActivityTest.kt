@@ -19,7 +19,7 @@ class TeamSearchActivityTest {
     fun testSearchMatch() {
         Espresso.onView(ViewMatchers.withId(R.id.search_src_text)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         Espresso.onView(ViewMatchers.withId(R.id.search_src_text)).perform(ViewActions.typeText("Barcelona"))
-        delay()
+        delay(3)
 
         Espresso.onView(ViewMatchers.withId(R.id.listEvent)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         delay()
@@ -27,17 +27,18 @@ class TeamSearchActivityTest {
         Espresso.onView(ViewMatchers.withId(R.id.listEvent)).perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, ViewActions.click())
         )
-        delay()
+        delay(2)
 
         Espresso.onView(ViewMatchers.withId(R.id.menu_item_add_favorite_menu_detail_match)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         Espresso.onView(ViewMatchers.withId(R.id.menu_item_add_favorite_menu_detail_match)).perform(ViewActions.click())
 
         Espresso.pressBack()
+        delay(2)
 
         Espresso.onView(ViewMatchers.withId(R.id.listEvent)).perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, ViewActions.click())
         )
-        delay()
+        delay(2)
         Espresso.onView(ViewMatchers.withId(R.id.menu_item_add_favorite_menu_detail_match)).check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
         Espresso.onView(ViewMatchers.withId(R.id.menu_item_add_favorite_menu_detail_match)).perform(ViewActions.click())
     }

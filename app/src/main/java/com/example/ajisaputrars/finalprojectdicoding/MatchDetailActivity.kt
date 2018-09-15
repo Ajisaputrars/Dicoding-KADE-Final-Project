@@ -114,10 +114,10 @@ class MatchDetailActivity: AppCompatActivity() {
             R.id.menu_item_add_favorite_menu_detail_match -> {
                 if (isFavorite) {
                     removeFromFavorite()
-                    toast("Event terhapus dari Favorit")
+                    toast("Event deleted from Favorite")
                 } else {
                     addToFavorite()
-                    toast("Event disimpan di Favorit")
+                    toast("Event saved to Favorite")
                 }
 
                 isFavorite = !isFavorite
@@ -203,7 +203,7 @@ class MatchDetailActivity: AppCompatActivity() {
                         Event.ID_AWAY_TEAM to detailTeamObject.idAwayTeam)
             }
         } catch (e: SQLiteConstraintException) {
-            toast("Error add to Favorite nih > " + e.localizedMessage)
+            toast("Error add to Favorite > " + e.localizedMessage)
         }
     }
 
@@ -214,7 +214,7 @@ class MatchDetailActivity: AppCompatActivity() {
                         "id" to detailTeamObject.idEvent)
             }
         } catch (e: SQLiteConstraintException) {
-            toast("Error detele Favorite nih > " + e.localizedMessage)
+            toast("Error detele Favorite > " + e.localizedMessage)
         }
     }
 

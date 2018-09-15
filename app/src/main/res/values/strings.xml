@@ -36,4 +36,7 @@
     <string name="substitutes">Substitutes</string>
     <string name="image_view_logo_club">Image view logo club</string>
     <string name="add_favorite">Add Favorite</string>
+    <string name="weight_text">Weight (Kg)</string>
+    <string name="height_text">Height (M)</string>
+    <string name="position_text">Play Position</string>
 </resources>

@@ -14,7 +14,7 @@ class TeamSearchPresenter(private val view: TeamSearchView,
                           private val gson: Gson) {
 
     fun getTeamsSearch(name: String) {
-        if (name.length > 2) {
+        if (name.length > 1) {
             doAsync {
                 val data = gson.fromJson(apiRepository
                         .doRequest(TheSportDbApi.getSearchTeams(name)),

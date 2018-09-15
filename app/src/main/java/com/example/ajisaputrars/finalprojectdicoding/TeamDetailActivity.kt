@@ -76,7 +76,6 @@ class TeamDetailActivity : AppCompatActivity(){
         }
 
         override fun getCount(): Int {
-            // Show 3 total pages.
             return 2
         }
     }
@@ -95,10 +94,10 @@ class TeamDetailActivity : AppCompatActivity(){
             R.id.menu_item_add_favorite_menu_detail_match -> {
                 if (isFavorite) {
                     removeFromFavorite()
-                    toast("Event terhapus dari Favorit")
+                    toast("Deleted from Favorite")
                 } else {
                     addToFavorite()
-                    toast("Event disimpan di Favorit")
+                    toast("Saved to Favorite")
                 }
 
                 isFavorite = !isFavorite
@@ -145,7 +144,6 @@ class TeamDetailActivity : AppCompatActivity(){
                         Team.TEAM_BANNER to teamDetailObject.teamBanner,
                         Team.YOUTUBE to teamDetailObject.youtube)
             }
-            toast("Sukses Disimpan nih timnya")
         } catch (e: SQLiteConstraintException) {
             snackbar(container_teamdetail, e.localizedMessage).show()
         }
@@ -157,7 +155,6 @@ class TeamDetailActivity : AppCompatActivity(){
                 delete(Team.TABLE_TEAM, "(${Team.ID_TEAM} = {id})",
                         "id" to teamDetailObject.idTeam)
             }
-            toast("Berhasil dihapus nih timnya")
         } catch (e: SQLiteConstraintException) {
             snackbar(container_teamdetail, e.localizedMessage).show()
         }

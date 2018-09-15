@@ -39,7 +39,6 @@ class TeamOverviewFragment : Fragment(), AnkoComponent<Context> {
         super.onCreate(savedInstanceState)
 
         teamDescription = arguments?.getString(TEAM_DESCRIPTION)
-        Log.d("teamDescription", "teamDescription = " + teamDescription)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

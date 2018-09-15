@@ -22,7 +22,7 @@ class MatchSearchPresenter(private val view: MatchSearchView,
 
     fun getMatchSearch(name: String?) {
         if (name != null) {
-            if (name.length > 2) {
+            if (name.length > 1) {
                 async(context.main){
                     val data = bg {
                         gson.fromJson(apiRepository

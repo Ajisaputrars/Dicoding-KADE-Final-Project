@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Event(
-        val id: Long?, // This id is for database table
+        val id: Long?,
         @SerializedName("idEvent") val idEvent: String,
         @SerializedName("strSport") val sport: String,
         @SerializedName("idLeague") val idLeague: String,

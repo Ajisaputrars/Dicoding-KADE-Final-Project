@@ -94,7 +94,7 @@ class PlayerDetailActivity : AppCompatActivity(), AnkoComponent<Context> {
                     id = R.id.first_item_player_detail
 
                     textView {
-                        text = "Weight (Kg)"
+                        text = getString(R.string.weight_text)
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
 
                     }.lparams {
@@ -102,7 +102,6 @@ class PlayerDetailActivity : AppCompatActivity(), AnkoComponent<Context> {
                     }
 
                     playerWeightTextView = textView {
-                        text = "60 Kg"
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
                     }
                 }.lparams {
@@ -115,7 +114,7 @@ class PlayerDetailActivity : AppCompatActivity(), AnkoComponent<Context> {
                     id = R.id.second_item_player_detail
 
                     textView {
-                        text = "Height (M)"
+                        text = getString(R.string.height_text)
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
 
                     }.lparams {
@@ -123,7 +122,6 @@ class PlayerDetailActivity : AppCompatActivity(), AnkoComponent<Context> {
                     }
 
                     playerHeightTextView = textView {
-                        text = "60 M"
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
                     }
                 }.lparams {
@@ -140,14 +138,13 @@ class PlayerDetailActivity : AppCompatActivity(), AnkoComponent<Context> {
                     id = R.id.third_item_player_detail
 
                     textView {
-                        text = "Play Position"
+                        text = getString(R.string.position_text)
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
                     }.lparams {
                         topMargin = dip(5)
                     }
 
                     playerPositionTextView = textView {
-                        text = "Forward"
                         textAlignment = View.TEXT_ALIGNMENT_CENTER
                     }
                 }.lparams{

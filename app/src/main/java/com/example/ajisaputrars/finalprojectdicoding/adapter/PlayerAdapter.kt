@@ -50,7 +50,7 @@ class PlayerAdapter(private val players: List<Player>, private val listener: (Pl
                         textView {
                             id = R.id.player_name
                             textSize = 19f
-                            text = "Nama nich"
+//                            text = "Nama nich"
                             textColor = R.color.colorAccent
                         }.lparams{
                             leftMargin = dip(15)
@@ -60,7 +60,7 @@ class PlayerAdapter(private val players: List<Player>, private val listener: (Pl
                             id = R.id.player_position
                             textSize = 16f
                             textAlignment = right
-                            text = "Posisinya nich"
+//                            text = "Posisinya nich"
                         }.lparams{
                             topMargin = dip(5)
                             leftMargin = dip(15)

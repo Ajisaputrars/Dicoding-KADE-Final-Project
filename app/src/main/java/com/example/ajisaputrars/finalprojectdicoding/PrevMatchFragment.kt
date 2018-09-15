@@ -50,7 +50,6 @@ class PrevMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
         Log.d("onActivityCreated", "onActivityCreated dijalankan")
 
         adapter = MatchAdapter(eventMatchLeague) {
-            toast("Tap berhasil")
             startActivity<MatchDetailActivity>(
                     "matchObject" to it)
         }
@@ -118,8 +117,6 @@ class PrevMatchFragment : Fragment(), AnkoComponent<Context>, MatchView {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-//        return inflater.inflate(R.layout.fragment_match_prev, container,false)
-        Log.d("onCreateView", "onCreateView dijalankan")
         return createView(AnkoContext.create(ctx))
     }
 

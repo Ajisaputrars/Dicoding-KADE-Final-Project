@@ -90,10 +90,8 @@ class MatchSearchActivity : AppCompatActivity(), AnkoComponent<Context>, MatchSe
                 if (newText == null || newText == "") {
                     matchesSearch.clear()
                     adapter.notifyDataSetChanged()
-                    Log.d("NewTextNull", "NewText adalah = " + newText)
                 } else {
                     presenter.getMatchSearch(newText)
-                    Log.d("NewText", "NewText adalah = " + newText)
                 }
                 return true
             }
@@ -102,12 +100,14 @@ class MatchSearchActivity : AppCompatActivity(), AnkoComponent<Context>, MatchSe
 
     override fun showMatchSearchList(data: List<Event>?) {
         if (data== null) {
-            Log.d("Data Null", "Data null nich")
         } else {
             matchesSearch.clear()
-            matchesSearch.addAll(data)
+            for (i in data) {
+                if (i.sport == "Soccer") {
+                    matchesSearch.addAll(data)
+                }
+            }
             adapter.notifyDataSetChanged()
-            Log.d("Data Gak Null", "Data pertama adalah " + matchesSearch[0].homeTeam + " VS " + matchesSearch[0].awayTeam)
         }
     }
 

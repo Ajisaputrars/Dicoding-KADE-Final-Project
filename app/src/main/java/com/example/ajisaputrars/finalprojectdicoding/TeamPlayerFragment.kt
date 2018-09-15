@@ -56,7 +56,6 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, TeamPlayerView {
         super.onActivityCreated(savedInstanceState)
 
         idTeam = arguments!!.getString(ARG_ID_TEAM)
-        Log.d("ID TEAM", "IDnya adalah = " + idTeam)
 
         adapter = PlayerAdapter(players){
             startActivity<PlayerDetailActivity>(
@@ -78,7 +77,6 @@ class TeamPlayerFragment : Fragment(), AnkoComponent<Context>, TeamPlayerView {
 
     override fun showPlayerList(data: List<Player>?) {
         if (data == null) {
-            Log.d("Player Null", "Null nih playernya")
         } else {
             players.clear()
             players.addAll(data)

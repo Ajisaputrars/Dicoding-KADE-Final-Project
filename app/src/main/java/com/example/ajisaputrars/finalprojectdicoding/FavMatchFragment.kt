@@ -36,14 +36,12 @@ class FavMatchFragment : Fragment(), AnkoComponent<Context> {
     private var favorites: MutableList<Event> = mutableListOf()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-//        return inflater.inflate(R.layout.fragment_match_fav, container,false)
         return createView(AnkoContext.create(ctx))
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         adapter = MatchAdapter(favorites) {
-            toast("Tap berhasil")
             startActivity<MatchDetailActivity>(
                     "matchObject" to it
             )

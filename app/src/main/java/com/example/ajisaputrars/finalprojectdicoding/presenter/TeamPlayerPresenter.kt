@@ -16,7 +16,6 @@ class TeamPlayerPresenter(private val view: TeamPlayerView,
                           private val gson: Gson) {
 
     fun getTeamPlayerList(teamID: String?) {
-//        view.showLoading()
         doAsync {
             val data = gson.fromJson(apiRepository
                     .doRequest(TheSportDbApi.getTeamPlayer(teamID)),
@@ -24,7 +23,6 @@ class TeamPlayerPresenter(private val view: TeamPlayerView,
             )
 
             uiThread {
-//                view.hideLoading()
                 view.showPlayerList(data.player)
             }
         }
