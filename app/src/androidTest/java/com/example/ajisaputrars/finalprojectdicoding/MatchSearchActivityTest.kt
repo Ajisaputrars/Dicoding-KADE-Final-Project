@@ -28,7 +28,9 @@ class MatchSearchActivityTest {
     @Test
     fun testSearchMatch() {
         onView(withId(search_src_text)).check(matches(isDisplayed()))
-        onView(withId(search_src_text)).perform(typeText("Barcelona"))
+        onView(withId(search_src_text)).perform(typeText("Barc"))
+        delay()
+        onView(withId(search_src_text)).perform(typeText("elona"))
         delay(3)
 
         onView(withId(R.id.listEvent)).check(matches(isDisplayed()))
@@ -41,8 +43,9 @@ class MatchSearchActivityTest {
 
         onView(withId(R.id.menu_item_add_favorite_menu_detail_match)).check(matches(isDisplayed()))
         onView(withId(R.id.menu_item_add_favorite_menu_detail_match)).perform(click())
-
         pressBack()
+        delay()
+
         onView(withId(R.id.listEvent)).perform(
                 RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0, click())
         )

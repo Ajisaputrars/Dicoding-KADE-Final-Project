@@ -32,7 +32,7 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".TeamSearchActivity"
             android:screenOrientation="portrait"/>
-        <activity 
+        <activity
             android:name=".MatchSearchActivity"
             android:screenOrientation="portrait"/>
     </application>
