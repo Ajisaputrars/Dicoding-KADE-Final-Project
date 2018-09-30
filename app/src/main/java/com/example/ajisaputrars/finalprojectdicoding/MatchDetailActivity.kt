@@ -146,6 +146,7 @@ class MatchDetailActivity: AppCompatActivity() {
             val startTime = dateTime.dateTimeToFormat()
             Log.d("startTime", "startTime adalah " + startTime)
             val endTime = startTime + TimeUnit.MINUTES.toMillis(90)
+            Log.d("endTime", "endTime adalah " + endTime)
 
             intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime)
             intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime)
