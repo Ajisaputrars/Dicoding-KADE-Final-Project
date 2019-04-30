@@ -19,6 +19,10 @@ Aplikasi ini memiliki fitur yang wajib ada agar bisa lulus dari kelas Intermedia
   <img src="https://github.com/Ajisaputrars/Dicoding-KADE-Final-Project/blob/master/screenshot1.png" width="750" align="center">
 </p>
 
+<p align="center">
+  <img src="https://github.com/Ajisaputrars/Dicoding-KADE-Final-Project/blob/master/screenshot2.png" width="750" align="center">
+</p>
+
 ### **Author**
 
 * **[Aji Saputra Raka Siwi][2]**
